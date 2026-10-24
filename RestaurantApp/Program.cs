@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 
 namespace RestaurantApp
 {
@@ -23,18 +24,21 @@ namespace RestaurantApp
     {
         static void Main(string[] args)
         {
-            Restaurant restaurant = new Restaurant(
-                1,
-                "ร้านอาหารตามสั่ง",
-                "อาหารไทย",
-                4.5
-            );
+            List<Restaurant> restaurants = new List<Restaurant>
+            {
+                new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
+                new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
+                new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7)
+            };
 
-            Console.WriteLine("hello TIT.1/1");
-            Console.WriteLine($"รหัสร้าน: {restaurant.Id}");
-            Console.WriteLine($"ชื่อร้าน: {restaurant.Name}");
-            Console.WriteLine($"ประเภท: {restaurant.Type}");
-            Console.WriteLine($"คะแนน: {restaurant.Rating}");
+            foreach (Restaurant restaurant in restaurants)
+            {
+                Console.WriteLine($"ID: {restaurant.Id}");
+                Console.WriteLine($"Name: {restaurant.Name}");
+                Console.WriteLine($"Type: {restaurant.Type}");
+                Console.WriteLine($"Rating: {restaurant.Rating}");
+                Console.WriteLine("----------------------");
+            }
         }
     }
 }
