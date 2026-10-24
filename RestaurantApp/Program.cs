@@ -29,12 +29,12 @@ namespace RestaurantApp
             {
                 new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
                 new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
-                new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7)
+                new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7),
+                new Restaurant(4, "Haidilao Hot Pot", "Hot Pot", 4.8),
+                new Restaurant(5, "Yang's Dumplings", "Chinese Cuisine", 4.3)
             };
 
             Console.WriteLine("=== Restaurant List ===");
-            Console.WriteLine("ID | Name | Type | Rating");
-            Console.WriteLine("------------------------------------------");
 
             foreach (Restaurant restaurant in restaurants)
             {
@@ -43,12 +43,8 @@ namespace RestaurantApp
                 );
             }
 
-            int totalRestaurants = restaurants.Count;
-            double averageRating = restaurants.Average(r => r.Rating);
-
-            Console.WriteLine("------------------------------------------");
-            Console.WriteLine($"Total restaurants: {totalRestaurants}");
-            Console.WriteLine($"Average rating: {averageRating:F2}");
+            Console.WriteLine($"Total restaurants: {restaurants.Count}");
+            Console.WriteLine($"Average rating: {restaurants.Average(r => r.Rating):F2}");
         }
     }
 }
