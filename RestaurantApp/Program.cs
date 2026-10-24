@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace RestaurantApp
 {
@@ -28,12 +29,12 @@ namespace RestaurantApp
             {
                 new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
                 new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
-                new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7),
-
-                // เพิ่มร้านที่ 4–5
-                new Restaurant(4, "ร้านอาหาร A", "Chinese Cuisine", 4.3),
-                new Restaurant(5, "ร้านอาหาร B", "Thai Cuisine", 4.4)
+                new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7)
             };
+
+            Console.WriteLine("=== Restaurant List ===");
+            Console.WriteLine("ID | Name | Type | Rating");
+            Console.WriteLine("------------------------------------------");
 
             foreach (Restaurant restaurant in restaurants)
             {
@@ -41,6 +42,14 @@ namespace RestaurantApp
                     $"{restaurant.Id} | {restaurant.Name} | {restaurant.Type} | {restaurant.Rating}"
                 );
             }
+
+            // แสดงจำนวนร้านทั้งหมดและคะแนนเฉลี่ย
+            int totalRestaurants = restaurants.Count;
+            double averageRating = restaurants.Average(r => r.Rating);
+
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine($"Total restaurants: {totalRestaurants}");
+            Console.WriteLine($"Average rating: {averageRating:F2}");
         }
     }
 }
