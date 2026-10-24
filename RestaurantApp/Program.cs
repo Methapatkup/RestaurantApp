@@ -35,6 +35,7 @@ namespace RestaurantApp
             };
 
             Console.WriteLine("=== Restaurant List ===");
+            Console.WriteLine("ID | Name | Type | Rating");
 
             foreach (Restaurant restaurant in restaurants)
             {
@@ -43,8 +44,12 @@ namespace RestaurantApp
                 );
             }
 
-            Console.WriteLine($"Total restaurants: {restaurants.Count}");
-            Console.WriteLine($"Average rating: {restaurants.Average(r => r.Rating):F2}");
+            int totalRestaurants = restaurants.Count;
+            double averageRating = restaurants.Average(r => r.Rating);
+
+            Console.WriteLine("------------------------------");
+            Console.WriteLine($"Total restaurants: {totalRestaurants}");
+            Console.WriteLine($"Average rating: {averageRating:F2}");
         }
     }
 }
