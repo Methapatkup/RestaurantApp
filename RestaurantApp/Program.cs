@@ -43,7 +43,6 @@ namespace RestaurantApp
                 );
             }
 
-            // แสดงจำนวนร้านทั้งหมดและคะแนนเฉลี่ย
             int totalRestaurants = restaurants.Count;
             double averageRating = restaurants.Average(r => r.Rating);
 
