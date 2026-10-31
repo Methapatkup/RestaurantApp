@@ -50,6 +50,7 @@ namespace RestaurantApp
             Console.WriteLine("------------------------------");
             Console.WriteLine($"Total restaurants: {totalRestaurants}");
             Console.WriteLine($"Average rating: {averageRating:F2}");
+            Console.WriteLine("paekub");
         }
     }
 }
